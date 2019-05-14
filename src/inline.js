@@ -1,7 +1,7 @@
 import InlineEditor from "@ckeditor/ckeditor5-editor-inline/src/inlineeditor";
 import {createEditorCallback, createIframe} from "./shared";
 import BalloonPanelView from "@ckeditor/ckeditor5-ui/src/panel/balloon/balloonpanelview";
-import getDataFromElement from "@ckeditor/ckeditor5-utils/src/dom/getdatafromelement";
+import getDataFromElement from '@ckeditor/ckeditor5-utils/src/dom/getdatafromelement';
 
 const oldGOP = BalloonPanelView._getOptimalPosition;
 BalloonPanelView._getOptimalPosition = function ({element, target, positions, limiter, fitInViewport})
@@ -43,9 +43,21 @@ export default class InlineIFrameEditor extends InlineEditor
 {
   static create(sourceElementOrData, config)
   {
-    let frameBody = createIframe(sourceElementOrData);
-    frameBody.innerHTML = getDataFromElement(sourceElementOrData);
-    return super.create(frameBody, config)
-                .then(createEditorCallback(sourceElementOrData));
+    return new Promise(
+      resolve =>
+      {
+        let frameBody = createIframe(sourceElementOrData);
+        frameBody.innerHTML = getDataFromElement(sourceElementOrData);
+        super.create(frameBody, config)
+             .then(editor =>
+                   {
+                     createEditorCallback(editor, sourceElementOrData);
+                     resolve(editor);
+                   }
+             );
+      }
+    );
   }
 }
+
+export {InlineIFrameEditor};

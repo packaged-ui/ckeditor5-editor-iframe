@@ -13,5 +13,5 @@ document.addEventListener('DOMContentLoaded', function ()
       toolbar: ['bold', 'italic'],
       language: 'en'
     }
-  );
+  ).then((editor) => {console.log('editor', editor, editor.iframeElement);});
 });
