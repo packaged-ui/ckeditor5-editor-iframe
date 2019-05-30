@@ -97,6 +97,18 @@
     "@ckeditor/ckeditor5-typing" "^12.0.1"
     "@ckeditor/ckeditor5-undo" "^11.0.1"
 
+"@ckeditor/ckeditor5-image@^13.0.1":
+  version "13.0.1"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-image/-/ckeditor5-image-13.0.1.tgz#a97a8d538b3239703339e34087965e85248c68b4"
+  integrity sha512-tlGAC8W7J7Y6n7cRe7JV9shRc5KvYnN/jlTpmjfwP/hsEmB0/tzPfv7pxn+QusErGCsDxG9tUBK9izp9CX2DeQ==
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^12.1.0"
+    "@ckeditor/ckeditor5-engine" "^13.1.0"
+    "@ckeditor/ckeditor5-ui" "^12.1.0"
+    "@ckeditor/ckeditor5-upload" "^11.0.1"
+    "@ckeditor/ckeditor5-utils" "^12.1.0"
+    "@ckeditor/ckeditor5-widget" "^11.0.1"
+
 "@ckeditor/ckeditor5-paragraph@^11.0.1":
   version "11.0.1"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-paragraph/-/ckeditor5-paragraph-11.0.1.tgz#4c82efc60c52724fb622cf05d15fae7343126f78"
@@ -140,6 +152,15 @@
     "@ckeditor/ckeditor5-engine" "^13.1.0"
     "@ckeditor/ckeditor5-ui" "^12.1.0"
 
+"@ckeditor/ckeditor5-upload@^11.0.1":
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-upload/-/ckeditor5-upload-11.0.1.tgz#d80163ebb8f3d766bb75e0b136fbd9e01d2d27ff"
+  integrity sha512-XMga6yKZvibO9laPHUogM5CH93vRqj0x3x59eQQcfnrUSEJUjGOhyOhebJzkP7MthYrQLMZtMWZLG77j5baoiw==
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^12.1.0"
+    "@ckeditor/ckeditor5-ui" "^12.1.0"
+    "@ckeditor/ckeditor5-utils" "^12.1.0"
+
 "@ckeditor/ckeditor5-utils@^12.1.0":
   version "12.1.0"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-utils/-/ckeditor5-utils-12.1.0.tgz#9becd0849df8322c137ba32440dc11d770482809"
@@ -147,6 +168,16 @@
   dependencies:
     ckeditor5 "^12.1.0"
     lodash-es "^4.17.10"
+
+"@ckeditor/ckeditor5-widget@^11.0.1":
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-widget/-/ckeditor5-widget-11.0.1.tgz#732735fddc882821f3e77682a44b7cf117e4098f"
+  integrity sha512-Rm/OpFLrNaHNlQ+t49eyjavdve8f/B+xIMlT8MGrd2dw1tpFqGAwTXytJIaeNZqfWKg8LMQyT0LvjFoyQFkQVA==
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^12.1.0"
+    "@ckeditor/ckeditor5-engine" "^13.1.0"
+    "@ckeditor/ckeditor5-ui" "^12.1.0"
+    "@ckeditor/ckeditor5-utils" "^12.1.0"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"

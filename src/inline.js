@@ -31,6 +31,7 @@ BalloonPanelView._getOptimalPosition = function ({element, target, positions, li
       result.top += w.frameElement.offsetTop;
       result.left += w.frameElement.offsetLeft;
     }
+    result.top -= w.top.scrollY;
   }
   else
   {
