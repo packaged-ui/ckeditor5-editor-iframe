@@ -66,6 +66,31 @@ export function createEditorCallback(editor, sourceElementOrData)
   editor.model.document.on('change', doResize);
   editor.model.document.on('change', () => setDataInElement(sourceElementOrData, editor.getData()));
 
+  // iterate stylesheets, find css matching script filename (s/js/css/)
+  let currentScript = document.currentScript;
+  if(!currentScript)
+  {
+    const scripts = document.getElementsByTagName('script');
+    currentScript = scripts[scripts.length - 1];
+  }
+  if(currentScript)
+  {
+    let cssFilename = currentScript.src.replace(/^.+?([^/]+)\.js$/, '$1.css');
+    let links = document.getElementsByTagName('link');
+    for(let i = 0; i < links.length; i++)
+    {
+      if(links.hasOwnProperty(i))
+      {
+        const link = links[i];
+        if(link.href.lastIndexOf(cssFilename) === link.href.length - cssFilename.length)
+        {
+          // clone it and add into iframe head
+          getIframeDocument(editor.iframeElement).head.appendChild(link.cloneNode());
+        }
+      }
+    }
+  }
+
   // ensures that newly configured widgets are rendered correctly
   editor.setData(getDataFromElement(sourceElementOrData));
   doResize();
