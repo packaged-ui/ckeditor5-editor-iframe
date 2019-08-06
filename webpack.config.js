@@ -107,4 +107,4 @@ let inlineCfg = Object.assign(
   }
 );
 
-module.exports = [/*classicCfg,*/ inlineCfg];
+module.exports = [classicCfg, inlineCfg];
