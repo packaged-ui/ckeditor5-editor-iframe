@@ -3,15 +3,15 @@ import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph";
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
-import InlineIFrameEditor from "../src/inline";
 import ImageCaption from "@ckeditor/ckeditor5-image/src/imagecaption";
 import ImageStyle from "@ckeditor/ckeditor5-image/src/imagestyle";
 import ImageToolbar from "@ckeditor/ckeditor5-image/src/imagetoolbar";
+import InlineIFrameEditor from "../src/inline";
 
 document.addEventListener('DOMContentLoaded', function ()
 {
   InlineIFrameEditor.create(
-    document.getElementById('inline-example'),
+    document.getElementById('ck-example'),
     {
       plugins: [Essentials, Bold, Italic, Paragraph, Image, ImageCaption, ImageStyle, ImageToolbar],
       toolbar: ['bold', 'italic'],

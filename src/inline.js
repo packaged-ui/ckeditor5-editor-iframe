@@ -1,7 +1,7 @@
 import InlineEditor from "@ckeditor/ckeditor5-editor-inline/src/inlineeditor";
-import {createEditorCallback, createIframe} from "./shared";
 import BalloonPanelView from "@ckeditor/ckeditor5-ui/src/panel/balloon/balloonpanelview";
 import getDataFromElement from '@ckeditor/ckeditor5-utils/src/dom/getdatafromelement';
+import {createEditorCallback, createIframe} from "./shared";
 
 const oldGOP = BalloonPanelView._getOptimalPosition;
 BalloonPanelView._getOptimalPosition = function ({element, target, positions, limiter, fitInViewport})
@@ -57,8 +57,7 @@ export default class InlineIFrameEditor extends InlineEditor
                      resolve(editor);
                    }
              );
-      }
-    );
+      });
   }
 }
 

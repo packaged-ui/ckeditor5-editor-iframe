@@ -10,6 +10,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const {bundler, styles} = require('@ckeditor/ckeditor5-dev-utils');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 
@@ -48,6 +49,11 @@ let defaultCfg = {
         banner: bundler.getLicenseBanner(),
         raw: true
       }
+    ),
+    new MiniCssExtractPlugin(
+      {
+        filename: '[name].min.css'
+      }
     )
   ],
 
@@ -60,12 +66,8 @@ let defaultCfg = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: 'style-loader',
-            options: {
-              singleton: true
-            }
-          },
+          MiniCssExtractPlugin.loader,
+          'css-loader',
           {
             loader: 'postcss-loader',
             options: styles.getPostCssConfig(
@@ -86,10 +88,9 @@ let defaultCfg = {
 let classicCfg = Object.assign(
   {}, defaultCfg,
   {
-    name: 'classic',
-    entry: path.resolve(__dirname, 'example', 'classic.js'),
+    entry: {ckeditor: path.resolve(__dirname, 'example', 'classic.js')},
     output: {
-      filename: 'ckeditor.min.js',
+      filename: '[name].min.js',
       path: path.resolve(__dirname, 'example', 'build', 'classic')
     }
   }
@@ -98,10 +99,9 @@ let classicCfg = Object.assign(
 let inlineCfg = Object.assign(
   {}, defaultCfg,
   {
-    name: 'inline',
-    entry: path.resolve(__dirname, 'example', 'inline.js'),
+    entry: {ckeditor: path.resolve(__dirname, 'example', 'inline.js')},
     output: {
-      filename: 'ckeditor.min.js',
+      filename: '[name].min.js',
       path: path.resolve(__dirname, 'example', 'build', 'inline')
     }
   }
