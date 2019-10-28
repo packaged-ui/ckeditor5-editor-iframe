@@ -7,6 +7,7 @@ import ImageCaption from "@ckeditor/ckeditor5-image/src/imagecaption";
 import ImageStyle from "@ckeditor/ckeditor5-image/src/imagestyle";
 import ImageToolbar from "@ckeditor/ckeditor5-image/src/imagetoolbar";
 import InlineIFrameEditor from "../src/inline";
+import './test.css';
 
 document.addEventListener('DOMContentLoaded', function ()
 {
