@@ -1,6 +1,6 @@
 {
   "name": "@packaged-ui/ckeditor5-editor-iframe",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "repository": "git@github.com:packaged-ui/ckeditor5-editor-iframe.git",
   "author": "Tom Kay <oridan82@gmail.com>",
   "license": "MIT",
