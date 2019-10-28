@@ -66,7 +66,7 @@ export function createIframe(sourceElementOrData)
 
   // clearfix
   let ss = document.createElement('style');
-  ss.innerHTML = 'html,body{height:auto!important;padding:0!important;margin:0!important}body{box-sizing:border-box;height:fit-content;overflow-y:hidden;overflow-x:auto}body:after{content:" ";visibility:hidden;display:block;height:0;clear:both;}';
+  ss.innerHTML = 'html,body{height:auto!important;height:intrinsic!important;height:-moz-fit-content!important;height:-webkit-fit-content!important;height:fit-content!important;padding:0!important;margin:0!important;overflow-x:hidden!important;overflow-y:hidden!important}body{box-sizing:border-box;height:fit-content}body:after{content:" ";visibility:hidden;display:block;height:0;clear:both;}';
   iframeDoc.head.appendChild(ss);
 
   return iframeDoc.body;
